@@ -1,0 +1,121 @@
+.Box {
+    border: 2px solid #f1f1f1;
+    padding: 2rem;
+}
+
+@media (min-width: 768px) {
+    .modal-dialog {
+        width: 450px;
+        margin: 50px auto;
+    }
+}
+
+#modal-login .block-options {
+    margin: 7px 0 3px 15px;
+}
+
+.hr-text {
+    line-height: 1em;
+    position: relative;
+    outline: 0;
+    border: 0;
+    color: black;
+    text-align: center;
+    height: 1.5em;
+    opacity: .5;
+}
+
+.hr-text:before {
+    content: '';
+    background: linear-gradient(to right, transparent, #818078, transparent);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+}
+
+.hr-text:after {
+    content: attr(data-content);
+    position: relative;
+    display: inline-block;
+    color: black;
+    padding: 0 .5em;
+    line-height: 1.5em;
+    color: #818078;
+    background-color: #fcfcfa;
+}
+
+div.error-message {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+
+
+
+
+.header-navbar-transparent #header-navbar {
+    background-color: white !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
+.nav-main-header a {
+    display: block;
+    padding: 0 12px;
+    min-height: 34px;
+    color: #00CC66 !important;
+    font-weight: 600;
+    line-height: 34px;
+}
+
+h1,h2, h3, h4, h5, h6,  .h3, .h5, .h6 {
+
+     color: #00CC66 !important;
+}
+
+
+.h1, .h2  ,.h4{
+
+     color: white !important;
+}
+
+
+.bg-primary-dark {
+    background-color: #00CC66 !important;
+}
+
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #FF9900  !important;
+    border-color: #FF9900 !important;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #FF9900  !important;
+    border-color: #FF9900 !important;
+}
+
+
+.bg-gray-lighter {
+    color: #fff  !important;
+    background-color: #FF9900  !important;
+}
+
+
+.text-gray {
+    color: #666 !important;
+}
+
+
+.bg-primary-dark-op {
+    background-color: #00CC66 !important;
+    border: thin solid #666 !important;
+    
+}
