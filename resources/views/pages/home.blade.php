@@ -93,21 +93,21 @@
 					<blockquote>
 						<p class="clients-words">Hi there, We just bought Estela is llery of free bootstrap snippet</p>
 						<span class="clients-name text-primary">—Toyosi Salako</span>
-						<img class="img-circle img-thumbnail" src="assets/img/avatars/Jennifer_Jerome_tn.jpg">
+						<img class="img-circle img-thumbnail" src="assets/img/avatars/w2.jpg">
 					</blockquote>
 				</div>
 				<div class="col-sm-4">
 					<blockquote>
 						<p class="clients-words">Awesome Bootstrap snippets! Check it out! </p>
 						<span class="clients-name text-primary">— Adamson Bankole</span>
-						<img class="img-circle img-thumbnail" src="assets/img/avatars/ww.jpeg">
+						<img class="img-circle img-thumbnail" src="assets/img/avatars/man1.jpg">
 					</blockquote>
 				</div>
 				<div class="col-sm-4">
 					<blockquote>
 						<p  class="clients-words">copy paste my snippets for other users very easy</p>
 						<span class="clients-name text-primary">— Yetunde Oshilajat</span>
-						<img class="img-circle img-thumbnail" src="assets/img/avatars/www.jpeg">
+						<img class="img-circle img-thumbnail" src="assets/img/avatars/man2.jpg">
 					</blockquote>
 				</div>
 			</div><!--/.row-->
