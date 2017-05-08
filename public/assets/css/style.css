@@ -78,6 +78,17 @@ h1,h2, h3, h4, h5, h6,  .h3, .h5, .h6 {
 }
 
 
+footer   h3 {
+
+     color: #fcfcfc !important;
+}
+
+
+footer #page-footer ul li  a:hover, a:focus   {
+
+     color: #ccc !important;
+}
+
 .h1, .h2  ,.h4{
 
      color: white !important;
@@ -118,4 +129,26 @@ h1,h2, h3, h4, h5, h6,  .h3, .h5, .h6 {
     background-color: #00CC66 !important;
     border: thin solid #666 !important;
     
+}
+
+
+
+.block.block-bordered {
+    border-radius: 50px  50px 50px 50px  !important;
+}
+
+
+hr{
+
+margin-top: 0px !important;
+margin-bottom: 0px !important;
+border: 0;
+border-top: 5px solid #00CC66 !important;
+    
+}
+
+a {
+    color: #FF9900 !important;
+    -webkit-transition: color 0.12s ease-out;
+    transition: color 0.12s ease-out;
 }

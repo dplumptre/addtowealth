@@ -20,6 +20,9 @@
         <div class="bg-white">
             <section class="content content-boxed">
                 <!-- Section Content -->
+                  <div class="block block-themed animated fadeIn">
+                        <div class="block-header bg-gray-light">
+                
                 <div class="row items-push push-50-t push-30">
                     <div class="col-md-6 col-md-offset-3">
                         
@@ -68,7 +71,7 @@
                             </div>
                         </form>
                     </div>
-                </div>
+                </div></div></div>
                 <!-- END Section Content -->
             </section>
         </div>

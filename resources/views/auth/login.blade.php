@@ -45,7 +45,8 @@
     <div class="content content-boxed overflow-hidden">
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
-                <div class="push-30-t push-50 animated fadeIn">
+<div class="block block-themed animated fadeIn">
+                        <div class="block-header bg-gray-lighter">
                     <div class="text-center">
                  @include('layouts.partials.logo')
                         <p class="text-muted push-15-t">Welcome, Please Login</p>
@@ -101,7 +102,7 @@
                     <button class="btn btn-block btn-danger push-10" type="button">
                         <i class="fa fa-google-plus pull-left"></i> Login with Google+
                     </button>-->
-                </div>
+                </div></div>
             </div>
         </div>
     </div>

@@ -50,7 +50,8 @@
     <div class="content content-boxed overflow-hidden">
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
-                <div class="push-30-t push-20 animated fadeIn">
+                <div class="block block-themed animated fadeIn">
+                        <div class="block-header bg-gray-light">
                     <!-- Register Title -->
                     <div class="text-center">
                       @include('layouts.partials.logo')
@@ -147,7 +148,7 @@
                    Already a member ? click <a class="h5" href="{{ URL::asset('/login') }}">
                        <i>here</i> 
 </a>to login
-                </div>
+                        </div> </div>
             </div>
         </div>
     </div>
