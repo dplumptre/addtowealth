@@ -168,7 +168,6 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
         Codecourse\Notify\NotifyServiceProvider::class,
-        Laravel\Passport\PassportServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
 
         /*
