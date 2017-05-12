@@ -25,7 +25,10 @@
                     <div class="col-md-12">
                         <h3 class="h5 font-w600 text-uppercase push-10">Who are we?</h3>
 
-                        <p>We at BUF have dedicated our time as a team of zealous and dedicated individuals, that wish to create wealth and bring to existence a market that can act as a platform not for only business but as a source of financial empowerment to every member of our community and beyond..</p>
+                        <p>{{ config('app.name') }} 
+                            
+was created to raise the best thing that can can happen to individuals with a particular plan to help man and the environment.    
+We believe that the ability to live the routine you wish without having to work or rely on anyone else for cash, The wellbeing of the populace are our long-term lead. The commitment of our members sets us stand out from the crowd</p>
 
                    
                     </div>

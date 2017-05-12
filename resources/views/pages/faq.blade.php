@@ -29,12 +29,12 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#faq1" href="#faq1_q1"> WHAT IS BUFWEALTH</a>
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#faq1" href="#faq1_q1"> WHAT IS {{ config('app.name') }}</a>
                             </h3>
                         </div>
                         <div id="faq1_q1" class="panel-collapse collapse in">
                             <div class="panel-body">
-                                <p>BUFWEALTH was created to promote the greatest good, with a particular emphasis on helping man. Its connect people through donation to provide financial assistance to each other and everybody is helped</p>
+                                <p>{{ config('app.name') }} was created to promote the greatest good, with a particular emphasis on helping man. Its connect people through donation to provide financial assistance to each other and everybody is helped</p>
 
                             </div>
                         </div>
@@ -42,12 +42,12 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#faq1" href="#faq1_q2"> WHO IS ELIGIBLE TO JOIN BUFWEALTH </a>
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#faq1" href="#faq1_q2"> WHO IS ELIGIBLE TO JOIN {{ config('app.name') }}</a>
                             </h3>
                         </div>
                         <div id="faq1_q2" class="panel-collapse collapse">
                             <div class="panel-body">
-                                <p>There is no age and gender barrier in joining BUFWEALTH. Equal benefits and donations are assigned to all and sundry and there are no set up fee :.</p>
+                                <p>There is no age and gender barrier in joining {{ config('app.name') }}. Equal benefits and donations are assigned to all and sundry and there are no set up fee :.</p>
 
                             </div>
                         </div>
@@ -79,9 +79,9 @@
                             <div class="panel-body">
                                 <p>It is suggested that, you just pick a package after registeration,a sponsor will be automatically paired with you
 
-It is more convenient to attract new members through the Internet (Facebook, Twitter etc.). A person coming to the system through your referral link will be automatically redirected to bufwealth.com register page. After registering the system assigned a sponsor
+It is more convenient to attract new members through the Internet (Facebook, Twitter etc.). A person coming to the system through your referral link will be automatically redirected to addtowealth.com register page. After registering the system assigned a sponsor
 
-In the event that you were not invited by anyone, then you can join by going to http://www.bufwealth.com and click on the Join Now. You will be system will automatically assign you to a sponsor.</p>
+In the event that you were not invited by anyone, then you can join by going to https://addtowealth.com and click on the Join Now. You will be system will automatically assign you to a sponsor.</p>
 
                             </div>
                         </div>

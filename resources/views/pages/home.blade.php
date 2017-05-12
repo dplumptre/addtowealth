@@ -91,22 +91,22 @@
 			<div class="row testimonials">
 				<div class="col-sm-4">
 					<blockquote>
-						<p class="clients-words">Hi there, We just bought Estela is llery of free bootstrap snippet</p>
+						<p class="clients-words">{{ config('app.name') }}, It is the best program , It gives everyone an opportunity to earn income online</p>
 						<span class="clients-name text-primary">—Toyosi Salako</span>
 						<img class="img-circle img-thumbnail" src="assets/img/avatars/w2.jpg">
 					</blockquote>
 				</div>
 				<div class="col-sm-4">
 					<blockquote>
-						<p class="clients-words">Awesome Bootstrap snippets! Check it out! </p>
+						<p class="clients-words">{{ config('app.name') }} ,is the best platform around, a test can convince you! </p>
 						<span class="clients-name text-primary">— Adamson Bankole</span>
 						<img class="img-circle img-thumbnail" src="assets/img/avatars/man1.jpg">
 					</blockquote>
 				</div>
 				<div class="col-sm-4">
 					<blockquote>
-						<p  class="clients-words">copy paste my snippets for other users very easy</p>
-						<span class="clients-name text-primary">— Yetunde Oshilajat</span>
+						<p  class="clients-words"> I have used {{ config('app.name') }}, and I got paid . the site is also very easy to use</p>
+						<span class="clients-name text-primary">— Bababode Oshilaja</span>
 						<img class="img-circle img-thumbnail" src="assets/img/avatars/man2.jpg">
 					</blockquote>
 				</div>
@@ -242,7 +242,39 @@
       
       
 
+         
         
+               <div class="bg-image" style="background: #E8EFF9 ;">
+            <div>
+                <section class="content content-boxed overflow-hidden">
+                    <!-- Section Content -->
+                    <div class="row items-push push-20-t push-20 text-center">
+                        <div class="col-sm-6">
+                            <div class="h1 text-gray push-5" data-toggle="countTo" data-to="{{ $allusers }}" data-after="+">{{ $allusers }}+</div>
+                            <div class="font-w600 text-uppercase text-gray ">Accounts Today</div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="h1 text-gray  push-5"  data-to="{{ $latestusers }}" data-after="">{{ $latestusers }}</div>
+                            <div class="font-w600 text-uppercase text-gray ">Newest Member</div>
+                        </div>
+<!--                        <div class="col-sm-4">
+                        <?php
+//                        $sum = 0;
+//                        
+//                        if( !empty($amount_paid )){
+//                        foreach($amount_paid as $key=>$value)
+//                        {
+//                        $sum+= $value->amount;
+//                        }}
+                        ?>
+                        <div class="h1 text-gray  push-5"  data-to="{{-- number_format($sum) --}}" data-after=""> {{-- number_format($sum) --}}</div>
+                        <div class="font-w600 text-uppercase text-gray ">( &#8358; ) Amount Received By Users</div>      
+                        </div>
+                    </div>-->
+                    <!-- END Section Content -->
+                </section>
+            </div>
+        </div>        
         
  
       
