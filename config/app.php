@@ -168,9 +168,7 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
         Codecourse\Notify\NotifyServiceProvider::class,
-        Laravel\Passport\PassportServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
-        Spatie\Html\HtmlServiceProvider::class,
 
         /*
          * Application Service Providers...

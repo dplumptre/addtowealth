@@ -20,7 +20,6 @@
 
     <!-- Page Content -->
     <div class="content content-narrow">
-       
 
         <!-- Dashboard Charts -->
         <div class="row">
@@ -47,12 +46,8 @@
                         </div>
                 </div>
             </div>
-
-
         </div>
         <!-- END Dashboard Charts -->
-
-
     </div>
     <!-- END Page Content -->
 </main>

@@ -116,7 +116,7 @@ footer #page-footer ul li  a:hover, a:focus   {
 
 .bg-gray-lighter {
     color: #fff  !important;
-    background-color: #FF9900  !important;
+    background-color: #003175  !important;
 }
 
 
@@ -141,9 +141,9 @@ footer #page-footer ul li  a:hover, a:focus   {
 hr{
 
 margin-top: 0px !important;
-margin-bottom: 0px !important;
+margin-bottom: 10px !important;
 border: 0;
-border-top: 5px solid #00CC66 !important;
+border-top: 3px solid rgba(0, 49, 115, 0.45) !important;
     
 }
 

@@ -8,7 +8,7 @@ use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use Notifiable, HasApiTokens;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -45,7 +45,7 @@ class User extends Authenticatable
 
     public function receivers()
     {
-        return $this->hasMany('App\Models\Receiver');
+        return $this->hasMany(Receiver::class);
     }
 
 

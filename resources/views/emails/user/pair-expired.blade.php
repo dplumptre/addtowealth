@@ -7,7 +7,7 @@ Hi {{ucwords($pair->payer->user->username)}},
 Your offer to donate to {{ucwords($pair->receiver->user->userDetail->firstname) }} {{ ucwords($pair->receiver->user->userDetail->lastname)  }} has expired.
 You can no longer make the donation.
 
-You have to make a new donation to get another Recipient.
+You have to make a new donation & select a package to get another Recipient.
 @endcomponent
 
 Thanks,<br>

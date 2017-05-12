@@ -2,41 +2,20 @@
 @inject('carbon', 'Carbon\Carbon')
 
 @section('content')
-<?php
-$dateElements=[];
-?>
+    <?php
+    $dateElements = [];
+    ?>
 
     <!-- Main Container -->
     <main id="main-container">
         <!-- Page Header -->
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+
         <div class="content bg-gray-lighter">
             <div class="row items-push">
-                    
-<div style="margin: 15px 0px; padding: 10px 0px;text-align: center;background: #efefef">
- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- responsive -->
-    <ins class="adsbygoogle"
-    style="display:block"
-    data-ad-client="ca-pub-6084522876241496"
-    data-ad-slot="2088421046"
-    data-ad-format="auto"></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>           
-
-    </div>                   
                 <div class="col-sm-7">
                     <h1 class="page-heading">
-                        Outgoing Money
+                        My Donations
                     </h1>
                 </div>
                 <!--   <div class="col-sm-5 text-right hidden-xs">
@@ -51,12 +30,12 @@ $dateElements=[];
 
         <!-- Page Content -->
         <div class="content">
-                    <!-- Dynamic Table Full Pagination -->
-                    <div class="">
-                        <div class="block-header">
-                          <!--  <h3 class="block-title">Dynamic Table <small>Full pagination</small></h3> -->
-                        </div>
-                        <div id="holla"></div>
+            <!-- Dynamic Table Full Pagination -->
+            <div class="">
+                <div class="block-header">
+                    <!--  <h3 class="block-title">Dynamic Table <small>Full pagination</small></h3> -->
+                </div>
+                <div id="holla"></div>
                 <div class="table-responsive">
                     <!-- DataTables init on table by adding .js-dataTable-full-pagination class, functionality initialized in js/pages/base_tables_datatables.js -->
                     <table class="text-uppercase table-responsive table table-bordered table-striped  js-dataTable-full-pagination">
@@ -112,8 +91,10 @@ $dateElements=[];
                                                     <div id="clockdiv{{$loop->parent->iteration}}">
                                                         <span class="label label-info">Days: <span class="days"></span></span>
                                                         <span class="label label-info">Hrs: <span class="hours"></span></span>
-                                                        <span class="label label-info">Mins: <span class="minutes"></span></span>
-                                                        <span class="label label-info">Secs: <span class="seconds"></span></span>
+                                                        <span class="label label-info">Mins: <span
+                                                                    class="minutes"></span></span>
+                                                        <span class="label label-info">Secs: <span
+                                                                    class="seconds"></span></span>
                                                     </div>
                                                 @else
                                                     <div>
@@ -121,34 +102,39 @@ $dateElements=[];
                                                     </div>
                                                 @endif
                                             </strong>
-                                    </td>
-        <td class="text-center">
-        @if ( $p->elapse_time > $carbon->now()->format('Y-m-d H:i:s') )
-            <form  action="{{  secure_url('user-area/outgoing') }}" method="POST">{{ csrf_field() }}
-            <input type="hidden" value="<?php echo $p->id?>" name="pair_id"/><input name="payer_id" type="hidden" value="<?php echo $p->payer_id?>" />
-            <button type="submit" onclick="return confirm('Are you sure ?');" class="btn btn-danger btn-sm">I,ve Paid
-            @if($p->payer_status == 2)
-            <span>  <i class="fa fa-check"></i></span>
-            @endif
-            </button> 
-            </form> 
-        @else
-            <div>
-            <span class="label label-warning">completed</span>
-            </div>
-        @endif                                 
-        </td>
-                <td class="text-center"> 
-                  
-                    @if ( $p->receiver_status == 1 ) 
-                    <div><span class="label label-danger"><i class="fa fa-close"></i></span></div>
-                    @else
-                    <div><span class="label label-success"><i class="fa fa-check"></i></span></div>
-                    @endif                
-                
-                
-                
-                </td>
+                                        </td>
+                                        <td class="text-center">
+                                            @if ( $p->elapse_time > $carbon->now()->format('Y-m-d H:i:s') )
+                                                <form action="{{  secure_url('user-area/outgoing') }}"
+                                                      method="POST">{{ csrf_field() }}
+                                                    <input type="hidden" value="<?php echo $p->id?>"
+                                                           name="pair_id"/><input name="payer_id" type="hidden"
+                                                                                  value="<?php echo $p->payer_id?>"/>
+                                                    <button type="submit" onclick="return confirm('Are you sure ?');"
+                                                            class="btn btn-danger btn-sm">I,ve Paid
+                                                        @if($p->payer_status == 2)
+                                                            <span>  <i class="fa fa-check"></i></span>
+                                                        @endif
+                                                    </button>
+                                                </form>
+                                            @else
+                                                <div>
+                                                    <span class="label label-warning">completed</span>
+                                                </div>
+                                            @endif
+                                        </td>
+                                        <td class="text-center">
+
+                                            @if ( $p->receiver_status == 1 )
+                                                <div><span class="label label-danger"><i class="fa fa-close"></i></span>
+                                                </div>
+                                            @else
+                                                <div><span class="label label-success"><i
+                                                                class="fa fa-check"></i></span></div>
+                                            @endif
+
+
+                                        </td>
                                     </tr>
                                 @endforeach
                             @endforeach
@@ -215,6 +201,7 @@ $dateElements=[];
             <!--                     modal end   -->
             </div>
             <!-- END Dynamic Table Full Pagination -->
+            @include('includes.ads')
         </div>
         <!-- END Page Content -->
     </main>
@@ -222,12 +209,12 @@ $dateElements=[];
 @endsection
 
 @section('scripts')
-<script src="/js/clock-countdown.js" type="text/javascript"></script>
-<script>
-@if(count($dateElements)>0)
-@foreach($dateElements as $el)
-initializeClock('{{$el['div']}}', '{{$el['elapse_time']}}', '{{$carbon->now()}}')
-@endforeach
-@endif
-</script>
+    <script src="/js/clock-countdown.js" type="text/javascript"></script>
+    <script>
+        @if(count($dateElements)>0)
+        @foreach($dateElements as $el)
+        initializeClock('{{$el['div']}}', '{{$el['elapse_time']}}', '{{$carbon->now()}}')
+        @endforeach
+        @endif
+    </script>
 @endsection

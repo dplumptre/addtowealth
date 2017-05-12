@@ -18,8 +18,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 
 Route::get('test', function (User $user) {
-    dd((new Receiver())->TakeAllPendingReceivers());
-    return redirect()->route('dashboard');
+    return view('index');
 });
 /*
  * AUTH ROUTE

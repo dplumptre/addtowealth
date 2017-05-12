@@ -100,25 +100,25 @@
                 <div class="side-content">
                     <ul class="nav-main">
                         <li>
-                            <a href="{{ route('dashboard') }}"><i class="si si-speedometer"></i><span
+                            <a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i><span
                                         class="sidebar-mini-hide">Dashboard</span></a>
                         </li>
 
                         <li>
-                            <a href="{{ secure_asset('user-area/profile') }}"><i class="si si-speedometer"></i><span
+                            <a href="{{ secure_asset('user-area/profile') }}"><i class="fa fa-id-badge"></i><span
                                         class="sidebar-mini-hide">Profile</span></a>
                         </li>
                         <li>
-                            <a href="{{ secure_asset('user-area/donate') }}"><i class="si si-speedometer"></i><span
-                                        class="sidebar-mini-hide">Make a Donation</span></a>
+                            <a href="{{ secure_asset('user-area/donate') }}"><i class="si si-credit-card"></i><span
+                                        class="sidebar-mini-hide">Make Donation</span></a>
                         </li>
                         <li>
-                            <a href="{{ secure_asset('user-area/incoming') }}"><i class="si si-speedometer"></i><span
-                                        class="sidebar-mini-hide">Incoming Money</span></a>
+                            <a href="{{ secure_asset('user-area/incoming') }}"><i class="fa fa-money"></i><span
+                                        class="sidebar-mini-hide">My Purse</span></a>
                         </li>
                         <li>
-                            <a href="{{ secure_asset('user-area/outgoing') }}"><i class="si si-speedometer"></i><span
-                                        class="sidebar-mini-hide">Outgoing Money</span></a>
+                            <a href="{{ secure_asset('user-area/outgoing') }}"><i class="si si-briefcase"></i><span
+                                        class="sidebar-mini-hide">My Donations</span></a>
                         </li>
 
 

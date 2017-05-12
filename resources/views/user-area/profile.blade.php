@@ -33,7 +33,7 @@
                                 </ul>
                                 <h3 class="block-title">User Details</h3>
                             </div>
-                            <div class="block-content bg-gray-lighter">
+                            <div class="block-content bg-gray-light">
                                 @if ( $currentUser->userDetail == null )
                                     <div class="alert alert-warning alert-dismissable">
                                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×
@@ -220,23 +220,7 @@
                     </div>
                 </div>
             </div>
-
-
-            <div style="margin: 50px 0px; padding: 20px 0px;text-align: center;background: #C7C6C8">
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- responsive -->
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-6084522876241496"
-                     data-ad-slot="2088421046"
-                     data-ad-format="auto"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-
-            </div>
-
-
+            @include('includes.ads')
         </div>
     </main>
 
