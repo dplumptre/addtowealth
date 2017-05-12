@@ -15,9 +15,7 @@ class DisabledUser extends Model
         return $this->belongsTo(User::class);
     }
 
-
-
-
+    
     public static function check($id)
     {
         return self::where('user_id', $id)->first();

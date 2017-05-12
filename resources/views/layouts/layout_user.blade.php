@@ -14,10 +14,7 @@
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <!-- Icons -->
-    <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
     <link rel="shortcut icon" href="{{ secure_asset('assets/img/favicons/favicon.png') }}">
-
     <link rel="icon" type="image/png" href="{{ secure_asset('/assets/img/favicons/favicon-16x16.png') }}" sizes="16x16">
     <link rel="icon" type="image/png" href="{{ secure_asset('/assets/img/favicons/favicon-32x32.png') }}" sizes="32x32">
     <link rel="icon" type="image/png" href="{{ secure_asset('/assets/img/favicons/favicon-96x96.png') }}" sizes="96x96">
@@ -25,7 +22,6 @@
           sizes="160x160">
     <link rel="icon" type="image/png" href="{{ secure_asset('/assets/img/favicons/favicon-192x192.png') }}"
           sizes="192x192">
-
     <link rel="apple-touch-icon" sizes="57x57"
           href="{{ secure_asset('/assets/img/favicons/apple-touch-icon-57x57.png') }}">
     <link rel="apple-touch-icon" sizes="60x60"
@@ -44,17 +40,11 @@
           href="{{ secure_asset('/assets/img/favicons/apple-touch-icon-152x152.png') }}">
     <link rel="apple-touch-icon" sizes="180x180"
           href="{{ secure_asset('/assets/img/favicons/apple-touch-icon-180x180.png') }}">
-    <!-- END Icons -->
 
-    <!-- Stylesheets -->
-    <!-- Web fonts -->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
 
-
-    <!-- Page JS Plugins CSS -->
     <link rel="stylesheet" href="{{ secure_asset('assets/js/plugins/datatables/jquery.dataTables.min.css') }}">
-    <!-- Bootstrap and OneUI CSS framework -->
     <link rel="stylesheet" href="{{ secure_asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" id="css-main" href="{{ secure_asset('assets/css/oneui.css') }}">
     <link rel="stylesheet" id="css-theme" href="{{ secure_asset('/assets/css/style.css') }}">
@@ -62,10 +52,6 @@
     <link rel="stylesheet" id="css-main" href="{{ secure_asset('assets/css/custom.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ secure_asset('fancybox/jquery.fancybox-1.3.4.css') }}"/>
 
-
-    <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
-    <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/flat.min.css"> -->
-    <!-- END Stylesheets -->
 </head>
 <body>
 
@@ -95,7 +81,6 @@
                     </a>
                 </div>
                 <!-- END Side Header -->
-
                 <!-- Side Content -->
                 <div class="side-content">
                     <ul class="nav-main">
@@ -103,7 +88,6 @@
                             <a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i><span
                                         class="sidebar-mini-hide">Dashboard</span></a>
                         </li>
-
                         <li>
                             <a href="{{ secure_asset('user-area/profile') }}"><i class="fa fa-id-badge"></i><span
                                         class="sidebar-mini-hide">Profile</span></a>
@@ -120,23 +104,18 @@
                             <a href="{{ secure_asset('user-area/outgoing') }}"><i class="si si-briefcase"></i><span
                                         class="sidebar-mini-hide">My Donations</span></a>
                         </li>
-
-
                         @if( !empty($currentUser) && $currentUser->hasAnyRole(["superadmin","admin","guider"]))
                             <li>
                                 <a href="{{ secure_asset('user-area/news') }}"><i class="si si-speedometer"></i><span
                                             class="sidebar-mini-hide">News</span></a>
                             </li>
-
                         @endif
-
                         @if( !empty($currentUser) && $currentUser->hasAnyRole(["superadmin","admin"]))
                             <li>
                                 <a href="{{ secure_asset('user-area/dashboard-admin') }}"><i
                                             class="si si-speedometer"></i><span
                                             class="sidebar-mini-hide">Admin Dashboard</span></a>
                             </li>
-
                         @endif
                     </ul>
                 </div>
@@ -147,7 +126,6 @@
         <!-- END Sidebar Scroll Container -->
     </nav>
     <!-- END Sidebar -->
-
     <!-- Header -->
     <header id="header-navbar" class="content-mini content-mini-full">
         <!-- Header Navigation Right -->
@@ -160,7 +138,6 @@
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right">
-
                         <li>
                             <a tabindex="-1" href="{{ secure_asset('user-area/profile') }}">
                                 <i class="si si-user pull-right"></i>
@@ -172,8 +149,6 @@
                                 <i class="si si-user pull-right"></i> Change Password
                             </a>
                         </li>
-
-
                         <li>
                             <a tabindex="-1" href="{{ secure_asset('logout')}}"
                                {{--onclick="event.preventDefault();document.getElementById('logout-form').submit();"--}}
@@ -188,7 +163,6 @@
                     </ul>
                 </div>
             </li>
-
         </ul>
         <!-- END Header Navigation Right -->
 
@@ -211,13 +185,9 @@
         <!-- END Header Navigation Left -->
     </header>
     <!-- END Header -->
-
-
     <!-- Main Container -->
 @yield('content')
 <!-- END Main Container -->
-
-
     <!-- Footer -->
     <footer id="page-footer" class="content-mini content-mini-full font-s12 bg-gray-lighter clearfix">
         <div class="pull-right">
@@ -230,7 +200,6 @@
     <!-- END Footer -->
 </div>
 <!-- END Page Container -->
-
 <!-- Apps Modal -->
 <!-- Opens from the button in the header -->
 <div class="modal fade" id="apps-modal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -273,10 +242,6 @@
         </div>
     </div>
 </div>
-<!-- END Apps Modal -->
-
-<!-- OneUI Core JS: jQuery, Bootstrap, slimScroll, scrollLock, Appear, CountTo, Placeholder, Cookie and App.js -->
-
 
 <script src="{{ secure_asset('assets/js/core/jquery.min.js') }}"></script>
 <script src="{{ secure_asset('assets/js/core/bootstrap.min.js') }}"></script>
@@ -287,8 +252,6 @@
 <script src="{{ secure_asset('assets/js/core/jquery.placeholder.min.js') }}"></script>
 <script src="{{ secure_asset('assets/js/core/js.cookie.min.js') }}"></script>
 <script src="{{ secure_asset('assets/js/app.js') }}"></script>
-
-
 <!-- Page JS Plugins -->
 <script src="{{ secure_asset('assets/js/plugins/datatables/jquery.dataTables.min.js') }}"></script>
 <!-- Page JS Code -->
@@ -302,8 +265,6 @@
         $('.mark').hide();
         $('*[class^="mark"]').hide();
     });
-
-
     function paid(pair, payer) {
         $('.mark' + pair).show();
         $.ajax(
@@ -321,7 +282,6 @@
                     }
                 });
     }
-
     $(document).ready(function () {
         /* This is basic - uses default settings */
         $("a#single_image").fancybox();
@@ -338,10 +298,8 @@
             'overlayShow': false
         });
     });
-
 </script>
 <script type="text/javascript">
-
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
