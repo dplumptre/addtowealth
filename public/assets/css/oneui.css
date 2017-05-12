@@ -7914,7 +7914,7 @@ button.text-amethyst-lighter:focus {
   opacity: .75;
 }
 .bg-amethyst {
-  background-color: #a48ad4;
+  background-color: rgba(0, 49, 115, 0.87);
 }
 a.bg-amethyst:hover,
 a.bg-amethyst:focus {
@@ -11706,4 +11706,9 @@ div.tagsinput span.tag a:hover {
 }
 .editor-preview {
   z-index: 1050;
+}
+
+#sidebar {
+  width: 230px;
+  background-color: #003175;
 }

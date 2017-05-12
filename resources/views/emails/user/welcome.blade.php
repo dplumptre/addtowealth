@@ -3,12 +3,13 @@
 
 Hi {{$user->username}},
 
-Thank you for joining us and welcome aboard.
+Welcome to {{env('APP_NAME')}}
 
 @component('mail::panel')
-Here is the start of a healthy rewarding relationship.
+We are a community of people helping people, people offering assistance to people and empowering the poor.
 
-In the meantime, make sure you update your profile to get started.
+Take a look around the website and see all you can accomplish with it.
+Make sure you keep your profile updated with the correct information.
 @endcomponent
 <?php $url = route('profile'); ?>
 @component('mail::button', ['url' => $url])

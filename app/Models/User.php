@@ -45,7 +45,7 @@ class User extends Authenticatable
 
     public function receivers()
     {
-        return $this->hasMany('App\Models\Receiver');
+        return $this->hasMany(Receiver::class);
     }
 
 
