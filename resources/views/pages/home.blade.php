@@ -227,7 +227,7 @@
                     </li>
                 </ul>
                 <div class="panel-footer">
-                    <a class="btn btn-lg btn-block btn-success"><span style="color: white">Active </span></a>
+                    <a class="btn btn-lg btn-block btn-success"><span style="color: white">Loading... </span></a>
                 </div>
             </div>
         </div>
