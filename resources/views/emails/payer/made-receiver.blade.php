@@ -6,12 +6,9 @@ Hi {{ucwords($receiver->user->username)}},
 @component('mail::panel')
 You have been elevated to be a Recipient.
 
-Logon to your dashboard to view details.
+Kindly be patient as you will be allocated donors as soon as they are available.
 @endcomponent
 
-@component('mail::button', ['url' => ''])
-Button Text
-@endcomponent
 
 Thanks,<br>
 {{ config('app.name') }}

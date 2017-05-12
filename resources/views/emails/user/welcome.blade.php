@@ -1,5 +1,5 @@
 @component('mail::message')
-# Welcome home
+# Welcome To {{env('APP_NAME')}}
 
 Hi {{$user->username}},
 
