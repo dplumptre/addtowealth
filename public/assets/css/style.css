@@ -152,3 +152,16 @@ a {
     -webkit-transition: color 0.12s ease-out;
     transition: color 0.12s ease-out;
 }
+
+
+.page-heading {
+    color: #ffffff !important;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+
+.block-title{
+    
+    color:white !important;
+}
