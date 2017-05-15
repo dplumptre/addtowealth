@@ -70,20 +70,11 @@
             </section>
         </div>
         
-        
-
-        
-    
       
       
       
       
-      
-      
-      
-      
-      
-        <div class="container bootstrap snippet " style="margin-top: 60px;margin-bottom: 60px;">
+<!--        <div class="container bootstrap snippet " style="margin-top: 60px;margin-bottom: 60px;">
     <div class="row">
         <h2 class="text-center text-primary">Testimonies</h2>
        
@@ -110,10 +101,10 @@
 						<img class="img-circle img-thumbnail" src="assets/img/avatars/man2.jpg">
 					</blockquote>
 				</div>
-			</div><!--/.row-->
-		</div><!--/.col-->	
-	</div><!--/.row-->
-</div>
+			</div>/.row
+		</div>/.col	
+	</div>/.row
+</div>-->
 
 
       

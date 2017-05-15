@@ -29,7 +29,7 @@ class User extends Authenticatable
     ];
 
     
-    private $fakeusers = 0;
+    private $fakeusers = 340;
 
     public function userDetail()
     {
