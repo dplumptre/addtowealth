@@ -56,7 +56,7 @@
         </div>
         <div class="body" style="text-align: center;margin-top: 40px">
             <em>Launching @</em><br>
-            <strong>18th May 2017 12PM.</strong>
+            <strong>20th May 2017 12PM.</strong>
         </div>
     </div>
 </div>
@@ -64,7 +64,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.js"></script>
 <script>
-    var timeInterval = Math.abs(new Date('2017/05/18 12:00:00') - new Date());
+    var timeInterval = Math.abs(new Date('2017/05/20 12:00:00') - new Date());
     var clock = new FlipClock($('.clock'), timeInterval/1000,{
         countdown: true,
     });
