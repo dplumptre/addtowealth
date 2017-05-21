@@ -15,23 +15,11 @@
 use App\Models\AutomatedReceiver;
 use App\Models\Receiver;
 use App\Models\User;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
 
 Route::get('test', function () {
-
-
-    SSH::into('production')->run([
-        'cd /home/vagrant/projects/addtowealth',
-        'git pull',
-    ], function ($line) {
-        echo $line . PHP_EOL;
-    });
-
-    slack("Deployment done. " . now());
-
-    return;
-
-    //return view('index');
+    return view('index');
 });
 /*
  * AUTH ROUTE
@@ -141,4 +129,17 @@ Route::group(
 
 
     Route::get('/api-tokens', 'AdminController@apiTokens');
+
+    Route::get('deploy-git', function () {
+        if (App::environment('local')):
+            SSH::into('production')->run([
+                'cd /var/www/addtowealth',
+                'git pull',
+            ], function ($line) {
+                echo $line . PHP_EOL;
+            });
+            slack("Git Deployment done. " . now());
+            return;
+        endif;
+    });
 });
