@@ -17,8 +17,21 @@ use App\Models\Receiver;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 
-Route::get('test', function (User $user) {
-    return view('index');
+Route::get('test', function () {
+
+
+    SSH::into('production')->run([
+        'cd /home/vagrant/projects/addtowealth',
+        'git pull',
+    ], function ($line) {
+        echo $line . PHP_EOL;
+    });
+
+    slack("Deployment done. " . now());
+
+    return;
+
+    //return view('index');
 });
 /*
  * AUTH ROUTE
@@ -74,11 +87,11 @@ Route::group(
     Route::get('upload/{id}', 'UserController@upload')->name('upload');
     Route::post('upload', 'UserController@postupload')->name('post.upload');
     Route::get('news', 'UserController@news')->name('newz');
-    Route::post('news', 'UserController@postNews')->name('post.news'); 
+    Route::post('news', 'UserController@postNews')->name('post.news');
     Route::delete('news/{id}', 'UserController@destroyNews')->name('del.newz');
-    Route::get('view-news/{id}', 'UserController@viewNews')->name('viewnewz');   
-    
-  Route::get('dashboard-admin', 'UserController@dashboardAdmin')->name('dashboard-admin');
+    Route::get('view-news/{id}', 'UserController@viewNews')->name('viewnewz');
+
+    Route::get('dashboard-admin', 'UserController@dashboardAdmin')->name('dashboard-admin');
 });
 
 
@@ -101,7 +114,7 @@ Route::name('post.contact')->post('contact', 'PagesController@postcontact');
 Route::get('/home', 'HomeController@index');
 
 Route::group(
-    ['prefix' => 'admin', 'middleware' => ['auth','roles'], 'namespace' => 'Admin', 'roles'=>['superadmin', 'admin']], function () {
+    ['prefix' => 'admin', 'middleware' => ['auth', 'roles'], 'namespace' => 'Admin', 'roles' => ['superadmin', 'admin']], function () {
     //Route::get('/roles', ['uses'=>'AdminController@roleIndex', 'middleware'=>'roles', 'roles'=>['admin']]);
     Route::get('roles', 'AdminController@roleIndex')->name('roles');
     Route::post('roles', 'AdminController@postRole')->name('post.role');

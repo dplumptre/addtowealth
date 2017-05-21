@@ -169,6 +169,7 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         Codecourse\Notify\NotifyServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
+        Collective\Remote\RemoteServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -240,6 +241,7 @@ return [
          * Package Facades
          */
         'Notify' => Codecourse\Notify\Facades\Notify::class,
+        'SSH' => Collective\Remote\RemoteFacade::class,
 
     ],
 

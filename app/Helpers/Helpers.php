@@ -4,6 +4,14 @@ use Carbon\Carbon;
 use Spatie\Html\Html;
 
 
+function slack($message = "Slack Notification", $field1=null, $field2=null)
+{
+    $slack = new \App\Lib\SlackConnect(env('SLACK_CHANNEL'));
+    $slack->setMessage($message);
+    $slack->send();
+}
+
+
 function html()
 {
     return app(Html::class);
