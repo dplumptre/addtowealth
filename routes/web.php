@@ -114,6 +114,7 @@ Route::group(
 
     Route::get('receivers', 'AdminController@Receivers')->name('receivers');
     Route::post('receivers', 'AdminController@PostReceivers')->name('post.receivers');
+    Route::get('receivers/{id}/del', 'AdminController@DelReceiver')->name('del.receiver');
 
     Route::get('users', 'AdminController@Users')->name('users');
     Route::get('search-user', 'AdminController@SearchUser')->name('search.user');

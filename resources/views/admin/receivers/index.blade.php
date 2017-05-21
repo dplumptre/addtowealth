@@ -21,20 +21,19 @@
                             </thead>
                             <tbody>
                             @foreach($data as $row)
-                                <?php
-                                if ( $row->id == 146 ){continue;}
-                                ?>
                                 <tr>
-                                    <td>{{$row->user->username}}</td>
+                                    <td>@if((int)$row->status==0)
+                                            <a href="{{route('del.receiver',['id'=>$row->id])}}" class="label label-danger del">del</a>
+                                        @endif
+                                        {{$row->user->username}}</td>
                                     <td>{{$row->user->email}}</td>
                                     <td>{{number_format($row->packages->receiving_amount, 0)}}</td>
                                     <td>{{$row->status}}</td>
-                                    <td>{{$row->updated_at}}</td>
-                                    <td>{{$row->created_at}}</td>
+                                    <td>{{$row->updated_at->format("D,jS M Y-g:ia")}}</td>
+                                    <td>{{$row->created_at->format("D,jS M Y-g:ia")}}</td>
                                 </tr>
                             @endforeach
                             </tbody>
-
                         </table>
                         {{$data->links()}}
                     @else
@@ -42,49 +41,56 @@
                             There are no Receivers yet.
                         </div>
                     @endif
+                    <hr>
+                    <div class="row">
+                        @include('layouts.partials.errors')
+                        <div class="col-md-6">
+                            <div>
+                                <h4>Add User to Receivers</h4>
+                                <form action="{{route('post.receivers')}}" method="post">
+                                    {{csrf_field()}}
+                                    <div class="form-group">
+                                        <label for="admin">Admin</label>
+                                        <select name="user_id" id="user_id" class="form-control">
+                                            <option value="">Select One</option>
+                                            @foreach($users as $user)
+                                                <option value="{{$user->id}}">{{$user->username}}
+                                                    - {{$user->email}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
 
-                        <hr>
-
-                        <div class="row">
-                            @include('layouts.partials.errors')
-                            <div class="col-md-6">
-                                <div>
-                                    <h4>Add User to Receivers</h4>
-                                    <form action="{{route('post.receivers')}}" method="post">
-                                        {{csrf_field()}}
+                                    <div class="form-group">
                                         <div class="form-group">
-                                            <label for="admin">Admin</label>
-                                            <select name="user_id" id="user_id" class="form-control">
-                                                <option value="">Select One</option>
-                                                @foreach($users as $user)
-                                                    <option value="{{$user->id}}">{{$user->username}} - {{$user->email}}</option>
+                                            <label for="package">Package</label>
+                                            <select name="package_id" id="package_id" class="form-control">
+                                                <option value="">Choose One</option>
+                                                @foreach($packages as $package)
+                                                    <option value="{{$package->id}}">{{number_format($package->paying_amount, 0)}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
+                                    </div>
 
-                                        <div class="form-group">
-                                            <div class="form-group">
-                                                <label for="package">Package</label>
-                                                <select name="package_id" id="package_id" class="form-control">
-                                                    <option value="">Choose One</option>
-                                                    @foreach($packages as $package)
-                                                        <option value="{{$package->id}}">{{number_format($package->paying_amount, 0)}}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-primary">Submit</button>
-                                        </div>
-                                        <input type="hidden" name="status" value="0">
-                                    </form>
-                                </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                    <input type="hidden" name="status" value="0">
+                                </form>
                             </div>
                         </div>
+                    </div>
                 </div>
-
             </div>
         </div>
     </div>
+@endsection
+@section('scripts')
+    <script>
+        $(document).ready(function(){
+            $('.del').click(function(){
+                return confirm("Are you sure about this?");
+            });
+        });
+    </script>
 @endsection

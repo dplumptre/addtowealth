@@ -87,6 +87,17 @@ class AdminController extends Controller
     }
 
 
+    public function DelReceiver($id)
+    {
+        $row = Receiver::where('id', $id)->where('status', 0)->first();
+        if ($row):
+            $row->delete();
+            flash()->overlay('Receiver deleted');
+        endif;
+        return redirect()->back();
+    }
+
+
     public function Users()
     {
         $data = User::with('userDetail')->paginate(20);
