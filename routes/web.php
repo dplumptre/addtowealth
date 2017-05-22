@@ -134,9 +134,10 @@ Route::group(
         if (App::environment('local')):
             SSH::into('production')->run([
                 'cd /var/www/addtowealth',
+                'git stash',
                 'git pull',
             ], function ($line) {
-                echo $line . PHP_EOL;
+                echo $line . "<br>";
             });
             slack("Git Deployment done. " . now());
             return;
