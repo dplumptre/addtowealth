@@ -12,6 +12,7 @@
 */
 
 
+use App\Mail\NoticeMessage;
 use App\Models\AutomatedReceiver;
 use App\Models\Receiver;
 use App\Models\User;
@@ -19,7 +20,13 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
 
 Route::get('test', function () {
-    return view('index');
+
+    $users = User::find(2);
+
+    Mail::to($users)->send(new NoticeMessage($users));
+
+
+    //return view('index');
 });
 /*
  * AUTH ROUTE
@@ -122,6 +129,8 @@ Route::group(
 
     Route::get('users', 'AdminController@Users')->name('users');
     Route::get('search-user', 'AdminController@SearchUser')->name('search.user');
+
+    Route::get('packages', 'AdminController@Packages')->name('packages.index');
 
     Route::get('api/disabled-users', 'AdminController@ApiDisabledUsers');
     Route::get('disabled-users', 'AdminController@DisabledUsers')->name('disabled.users');

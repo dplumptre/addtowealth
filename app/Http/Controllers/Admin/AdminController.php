@@ -27,7 +27,11 @@ class AdminController extends Controller
         $r_done = Receiver::where('status',2)->count();
         $r_pending = Receiver::where('status',0)->count();
         $r_processing = Receiver::where('status',1)->count();
-        return view('admin.index', compact('users','r_pending','r_done','r_processing'));
+        $p_done = Payer::where('finished', 1)->count();
+        $p_processing = Payer::where('status', 1)->count();
+        return view('admin.index',
+            compact('users','r_pending','r_done','r_processing','p_done','p_processing')
+        );
     }
 
     public function apiTokens()
@@ -142,5 +146,12 @@ class AdminController extends Controller
     public function SearchUser()
     {
 
+    }
+
+
+    public function Packages()
+    {
+        $data = Package::all();
+        return view('admin.packages.index', compact('data'));
     }
 }

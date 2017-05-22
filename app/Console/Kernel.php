@@ -4,6 +4,7 @@ namespace App\Console;
 
 use App\Console\Commands\DoPairing;
 use App\Console\Commands\MakeCompletedPayerReceiver;
+use App\Console\Commands\SendNoticeEmails;
 use App\Console\Commands\UpdateElapsedPayer;
 use App\Console\Commands\UpdateElapsedPayers;
 use Illuminate\Console\Command;
@@ -22,6 +23,7 @@ class Kernel extends ConsoleKernel
         UpdateElapsedPayers::class,
         UpdateElapsedPayer::class,
         MakeCompletedPayerReceiver::class,
+        SendNoticeEmails::class,
     ];
 
     /**
