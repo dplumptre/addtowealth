@@ -104,6 +104,9 @@ Route::get('/home', 'HomeController@index');
 Route::group(
     ['prefix' => 'admin', 'middleware' => ['auth', 'roles'], 'namespace' => 'Admin', 'roles' => ['superadmin', 'admin']], function () {
     //Route::get('/roles', ['uses'=>'AdminController@roleIndex', 'middleware'=>'roles', 'roles'=>['admin']]);
+
+    Route::get('/', 'AdminController@index')->name('admin.index');
+    Route::get('index', 'AdminController@index')->name('admin.index');
     Route::get('roles', 'AdminController@roleIndex')->name('roles');
     Route::post('roles', 'AdminController@postRole')->name('post.role');
 

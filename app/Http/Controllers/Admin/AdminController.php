@@ -21,6 +21,15 @@ use Illuminate\Support\Facades\DB;
 class AdminController extends Controller
 {
 
+    public function index()
+    {
+        $users = User::all()->count();
+        $r_done = Receiver::where('status',2)->count();
+        $r_pending = Receiver::where('status',0)->count();
+        $r_processing = Receiver::where('status',1)->count();
+        return view('admin.index', compact('users','r_pending','r_done','r_processing'));
+    }
+
     public function apiTokens()
     {
         return view('admin.apitokens.index');

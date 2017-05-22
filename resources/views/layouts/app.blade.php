@@ -18,7 +18,7 @@
             vertical-align: middle;
         }
     </style>
-
+    @yield('head')
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
