@@ -84,12 +84,13 @@
                                         </td>
                                         <td><strong>
                                                 {{--{{ $p->elapse_time }}--}}
-                                                @if ( $p->elapse_time > $carbon->now()->format('Y-m-d H:i:s') )
+                                                @if ( $p->elapse_time )
                                                     @php
                                                         $dateElements[] = ['div'=>"clockdiv{$loop->parent->iteration}", 'elapse_time'=>$p->elapse_time];
                                                     @endphp
                                                     <div id="clockdiv{{$loop->parent->iteration}}"></div>
                                                 @endif
+
                                             </strong>
                                         </td>
                                         <td class="text-center">
