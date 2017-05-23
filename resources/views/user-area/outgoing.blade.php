@@ -88,18 +88,7 @@
                                                     @php
                                                         $dateElements[] = ['div'=>"clockdiv{$loop->parent->iteration}", 'elapse_time'=>$p->elapse_time];
                                                     @endphp
-                                                    <div id="clockdiv{{$loop->parent->iteration}}">
-                                                        <span class="label label-info">Days: <span class="days"></span></span>
-                                                        <span class="label label-info">Hrs: <span class="hours"></span></span>
-                                                        <span class="label label-info">Mins: <span
-                                                                    class="minutes"></span></span>
-                                                        <span class="label label-info">Secs: <span
-                                                                    class="seconds"></span></span>
-                                                    </div>
-                                                @else
-                                                    <div>
-                                                        <span class="label label-danger">Time expired</span>
-                                                    </div>
+                                                    <div id="clockdiv{{$loop->parent->iteration}}"></div>
                                                 @endif
                                             </strong>
                                         </td>
@@ -213,7 +202,26 @@
     <script>
         @if(count($dateElements)>0)
         @foreach($dateElements as $el)
-        initializeClock('{{$el['div']}}', '{{$el['elapse_time']}}', '{{$carbon->now()}}')
+        {{--initializeClock('{{$el['div']}}', '{{$el['elapse_time']}}', '{{$carbon->now()}}')--}}
+
+        var countDownDate = new Date('{{$el['elapse_time']}}').getTime();
+
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("demo").innerHTML = ' <span class="label label-info">' + days + "d </span> "
+                + ' <span class="label label-info">' + hours + "h </span> "
+                + ' <span class="label label-info">' + minutes + "m </span> "
+                + ' <span class="label label-info">' + seconds + "s </span> ";
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("{{$el['div']}}").innerHTML = "EXPIRED";
+            }
+        }, 1000);
         @endforeach
         @endif
     </script>

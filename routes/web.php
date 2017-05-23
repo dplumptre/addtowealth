@@ -21,13 +21,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 Route::get('test', function () {
-
-    $users = User::find(2);
-
-    Mail::to($users)->send(new NoticeMessage($users));
-
-
-    //return view('index');
+    return view('test');
 });
 /*
  * AUTH ROUTE

@@ -47,8 +47,8 @@
 <div class="container">
 
     <?php
-    $elapse_time = '2017-04-01 10:20:00';
-    $now = \Carbon\Carbon::now();
+    $elapse_time = '2017-05-24 05:42:00';
+    $now = \Carbon\Carbon::now()->addDays(4);
     ?>
 
     <p>Elapse Time: {{$elapse_time}}</p>
@@ -82,57 +82,39 @@
             <span class="seconds"></span>
         </div>
 
+        <br>
+        <br>
+        <br>
+        <br>
+        <p id="demo" class="timer"></p>
+
 </div>
 </div>
 
 <script src="/js/clock-countdown.js"></script>
+
+
 <script>
-    var deadline = '{{$elapse_time}}';
-    var now = '{{$now}}';
+    // Set the date we're counting down to
+    let time = '{{$now}}'
+    var countDownDate = new Date(time).getTime();
 
-//    function getTimeRemaining(endtime) {
-//        var t = Date.parse(endtime) - Date.parse(new Date());
-//        var seconds = Math.floor((t / 1000) % 60);
-//        var minutes = Math.floor((t / 1000 / 60) % 60);
-//        var hours = Math.floor((t / 1000 * 60 * 60) % 24);
-//        var days = Math.floor(t / (1000 * 60 * 60 * 24));
-//
-//        return {
-//            'total': t,
-//            'days': days,
-//            'hours': hours,
-//            'minutes': minutes,
-//            'seconds': seconds
-//        }
-//    }
-//
-//
-//    function initializeClock(id, endtime) {
-//        var clock = document.getElementById(id);
-//        var daysSpan = clock.querySelector('.days');
-//        var hoursSpan = clock.querySelector('.hours');
-//        var minutesSpan = clock.querySelector('.minutes');
-//        var secondsSpan = clock.querySelector('.seconds');
-//
-//        function updateClock() {
-//            var t = getTimeRemaining(endtime);
-//
-//            daysSpan.innerHTML = t.days;
-//            hoursSpan.innerHTML = t.hours;
-//            minutesSpan.innerHTML = t.minutes;
-//            secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-//
-//            if (t.total <= 0) {
-//                clearInterval(timeinterval);
-//            }
-//        }
-//
-//        updateClock();
-//        var timeinterval = setInterval(updateClock, 1000)
-//    }
-
-    initializeClock('clockdiv', deadline, now);
-    initializeClock('clockdiv2', deadline, now);
+    var x = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        document.getElementById("demo").innerHTML = ' <span class="label label-info">' + days + "d </span> "
+            + ' <span class="label label-info">' + hours + "h </span> "
+            + ' <span class="label label-info">' + minutes + "m </span> "
+            + ' <span class="label label-info">' + seconds + "s </span> ";
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+    }, 1000);
 </script>
 </body>
 </html>
