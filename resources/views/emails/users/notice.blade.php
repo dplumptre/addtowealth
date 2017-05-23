@@ -1,5 +1,5 @@
 @component('mail::message')
-# Members Requests Listened to.
+# Time Left bug.
 
 Hi {{$user->username}},
 

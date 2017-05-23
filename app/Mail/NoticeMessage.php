@@ -34,7 +34,7 @@ class NoticeMessage extends Mailable
      */
     public function build()
     {
-        return $this->subject('Quick Notice: Members Requests Listened to.')
+        return $this->subject('Time Left Bug: No need for panic.')
             ->markdown('emails.users.notice');
     }
 }
