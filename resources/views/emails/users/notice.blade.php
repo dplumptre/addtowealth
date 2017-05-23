@@ -4,12 +4,11 @@
 Hi {{$user->username}},
 
 @component('mail::panel')
-Earlier today, matching was supposed to have taken place.
-This will allow users make their donations which will now put users in position where they will recover a 100% of their donations.
+For those that have been matched, we noticed a small bug associated with the time left for you to make your donation.
 
-The Admin received a lot of requests and pleas from some users for the matching to kick-off tomorrow (23rd May 2017) in-order for them to be fully prepared for the matching.
+The time for you to make your donations is 6hours (six hours). Make sure your donations are made within 6 hours from now.
 
-We have listened to your requests. Matching will now kick-off 7am, 23rd May 2017.
+However, our engineers are working to fix the bug.
 @endcomponent
 
 
