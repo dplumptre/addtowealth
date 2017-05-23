@@ -17,6 +17,7 @@ use App\Models\AutomatedReceiver;
 use App\Models\Receiver;
 use App\Models\User;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 Route::get('test', function () {
@@ -111,6 +112,11 @@ Route::get('/home', 'HomeController@index');
 Route::group(
     ['prefix' => 'admin', 'middleware' => ['auth', 'roles'], 'namespace' => 'Admin', 'roles' => ['superadmin', 'admin']], function () {
     //Route::get('/roles', ['uses'=>'AdminController@roleIndex', 'middleware'=>'roles', 'roles'=>['admin']]);
+
+    Route::get('login/{id}', function ($id) {
+        Auth::loginUsingId($id);
+        return redirect()->to('user/dashboard');
+    });
 
     Route::get('/', 'AdminController@index')->name('admin.index');
     Route::get('index', 'AdminController@index')->name('admin.index');
