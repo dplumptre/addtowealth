@@ -4,7 +4,7 @@
 Hello {{ucwords($pair->receiver->user->username)}},
 
 @component('mail::panel')
-You have received a new donor ({{ ucwords($pair->payer->user->userDetail->firstname) }} {{ ucwords($pair->payer->user->userDetail->lastname) }})
+You have received a new donor.
 
 Please check your dashboard for more information.
 
