@@ -109,7 +109,7 @@ Route::group(
 
     Route::get('login/{id}', function ($id) {
         Auth::loginUsingId($id);
-        return redirect()->to('user/dashboard');
+        return redirect()->route('dashboard');
     });
 
     Route::get('/', 'AdminController@index')->name('admin.index');
